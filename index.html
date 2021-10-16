@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>ECPI-GB</title>
+
+  <!--|Google Font( Open Sans )|-->
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+  <!--|Google Font( Roboto Slab )|-->
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700' rel='stylesheet' type='text/css'>
+  <!--|Leaflet Maps|-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+  <!--|Icon Font( Ion Icon)|-->
+  <link href="assets/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <!--|Owl Carousel|-->
+  <link href="assets/css/owl.carousel.css" rel="stylesheet" type="text/css">
+  <!--|Bootstrap|-->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+  <!--|Site Stylesheet|-->
+  <!--//Note: If you want to change color, just uncomment the commented stylesheet link and comment the uncommented link -->
+  <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+  <!--<link href="assets/css/style_blue.css" rel="stylesheet" type="text/css">-->
+  <!--<link href="assets/css/style_purple.css" rel="stylesheet" type="text/css">-->
+  <!--<link href="assets/css/style_teal.css" rel="stylesheet" type="text/css">-->
+
+  <!--|Favicon|-->
+  <link rel="icon" href="assets/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <!-- Touch Icons -->
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-touch-icon-114x114.png">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="assets/js/html5shiv.min.js"></script>
+  <script src="assets/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+<!--|Preloader|-->
+<div class="preloader">
+  <div class="preloader-inner">
+    <div>
+      <div></div>
+    </div>
+    <span class="fp-meta">Cargando...</span>
+  </div>
+</div> <!--|End Preloader|-->
+
+<!--||Site Header||-->
+<header id="home" class="site-header overlay-black">
+  <div class="overlay-inner">
+    <div class="fp-navbar">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-header">
+            <!--|Toggle Btn|-->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+              <span class="sr-only">Abrir/Cerrar Navegación</span>
+              <i class="ion-navicon"></i>
+            </button> <!--|End Toggle Btn|-->
+
+            <!--|Brand( Logo )|-->
+            <a class="navbar-brand" href="#home">
+              <img class="logo-white" alt="logo" src="assets/images/logo_white.png">
+              <img class="logo-black" alt="logo" src="assets/images/logo_black.png">
+            </a> <!--|End Brand( Logo )|-->
+          </div>
+
+          <!--|Navbar collapse|-->
+          <div class="collapse navbar-collapse" id="menu">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#event">Sobre el evento</a></li>
+              <li><a href="#speakers">Speakers</a></li>
+              <li><a href="#schedule">Cronograma</a></li>
+              <li><a href="#organizers">Organizadores</a></li>
+              <li><a href="#sponsor">Sponsors</a></li>
+              <li><a href="#faqs">FAQs</a></li>
+              <li><a class="btn btn-primary" href="https://forms.gle/cuaaGXeyrbt8dUjs5">¡Registrate Gratis!</a></li>
+            </ul>
+          </div> <!--|End Navbar collapse|-->
+        </div>
+      </nav>
+    </div>
+
+    <!--|Greeting Content|-->
+    <div class="greetings-content text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 content-center">
+            <!--|Head Text|-->
+            <div class="head-text">
+              <p class="fp-meta">27 de Noviembre de 2021 en General Belgrano, Buenos Aires, Argentina</p>
+              <h1 class="head-title">¡En Belgrano, se programa!</h1>
+            </div> <!--|End Head Text|-->
+
+            <!--|Event Countdown|-->
+            <div class="event-countdown">
+              <p>Falta poco para que nos podamos encontrar. No dejes de anotarte, ¡Es gratis!</p>
+
+              <div id="countdown-timer" class="countdown-timer"></div>
+            </div> <!--|End Event Countdown|-->
+          </div>
+        </div>
+      </div>
+    </div> <!--|End Greeting Content|-->
+  </div>
+
+  <!--|Animated Mouse Icon|-->
+  <span class="dwon-icon ion-mouse"></span>
+</header> <!--||End Site Header||-->
+
+<!--||Overview||-->
+<div id="overview" class="overview">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-3 col-sm-6">
+        <!--|Overview Box|-->
+        <div class="overview-box">
+          <span class="fp-icon"><i class="ion-person-stalker"></i></span>
+          <div class="fp-desc">
+            <h4 class="title">Para todos</h4>
+            <p>Para profesionales, estudiantes y futuros ingresantes a carreras de programación.</p>
+          </div>
+        </div> <!--|End Overview Box|-->
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <!--|Overview Box|-->
+        <div class="overview-box">
+          <span class="fp-icon"><i class="ion-map"></i></span>
+          <div class="fp-desc">
+            <h4 class="title">Locación</h4>
+            <p>Cine y Teatro Español<br>
+              (Av. Larrea y R. Peña, 
+              General Belgrano, Buenos Aires)</p>
+          </div>
+        </div> <!--|End Overview Box|-->
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <!--|Overview Box|-->
+        <div class="overview-box">
+          <span class="fp-icon"><i class="ion-android-microphone"></i></span>
+          <div class="fp-desc">
+            <h4 class="title">Speakers</h4>
+            <p>Charlas y talleres de referentes de
+              la industria y la academia
+            </p>
+          </div>
+        </div> <!--|End Overview Box|-->
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <!--|Overview Box|-->
+        <div class="overview-box">
+          <span class="fp-icon"><i class="ion-leaf"></i></span>
+          <div class="fp-desc">
+            <h4 class="title">Sponsors</h4>
+            <p>Participarán múltiples empresas del sector de software.</p>
+          </div>
+        </div> <!--|End Overview Box|-->
+      </div>
+
+    </div>
+  </div>
+</div> <!--||End Overview||-->
+
+<!--||Event||-->
+<section id="event" class="event section overlay-black">
+  <div class="overlay-inner">
+    <div class="container">
+      <!--|Section Header|-->
+      <header class="section-header">
+        <div class="row">
+          <div class="col-md-6 content-center">
+            <h2 class="section-title">
+              <span class="fp-meta">El</span>
+              <span class="title-text">Encuentro</span>
+            </h2>
+          </div>
+          <div class="col-md-8 content-center">
+            <p class="text-justify">
+              ECPI-GB (Encuentro de la Comunidad de Programación Informática de General Belgrano)
+              es el primer evento masivo sobre software de la ciudad de General Belgrano.
+              Se presenta como un punto de encuentro para los actuales profesionales de la industria
+              de la ciudad, los estudiantes y docentes de carreras de programación, y futuros
+              aspirantes. Un evento pensado para todos, para los que saben mucho, poquito y nada.
+              Un lugar donde conocernos, donde ponernos en contacto, donde seguir aprendiendo, y
+              donde festejar los más de 6 años desde que comenzamos a enseñar programación en el municipio.
+            </p>
+            <p class="text-justify">
+              El evento no es solo para los belgranenses. Todos están invitados a venir y a
+              descubrir que <b>¡En Belgrano, se programa!</b>. Acercate a disfrutar del evento,
+              sin importar de donde seas.
+            </p>
+          </div>
+        </div>
+      </header> <!--|End Section Header|-->
+    </div>
+  </div>
+</section>
+<!--||End Event||-->
+
+<!--||Speakers||-->
+<section id="speakers" class="speakers section overlay-white">
+  <div class="overlay-inner">
+    <div class="container">
+      <!--|Section Header|-->
+      <header class="section-header">
+        <div class="row">
+          <div class="col-md-6 content-center">
+            <h2 class="section-title">
+              <span class="fp-meta">Los</span>
+              <span class="title-text">Speakers</span>
+            </h2>
+            <p>
+              Múltiples profesionales de referencia en la industria y en la académia
+              nos van a acompañar brindando charlas y talleres. Conocelos acá.
+            </p>
+          </div>
+        </div>
+      </header> <!--|End Section Header|-->
+
+      <div class="row">
+        <div class="col-md-3 col-sm-6 content-center">
+          <h3 class="text-center">Próximamente</h3>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section> <!--||End Speakers||-->
+
+<!--||Schedule||-->
+<section id="schedule" class="schedule-wrapper section overlay-primary">
+  <div class="overlay-inner">
+    <div class="container">
+      <!--|Section Header|-->
+      <header class="section-header">
+        <div class="row">
+          <div class="col-md-6 content-center">
+            <h2 class="section-title">
+              <span class="fp-meta">El</span>
+              <span class="title-text">Cronograma</span>
+            </h2>
+            <p>Enterate de todas las charlas y talleres que tenemos disponibles en el evento</p>
+          </div>
+        </div>
+      </header> <!--|End Section Header|-->
+
+      <div class="row">
+        <div class="col-md-9 content-center">
+          <!--|schedules|-->
+          <div class="schedules">
+            <ul id="day1" class="tab-content current">
+              <li>
+                <div class="pull-right text-right">
+                  <span class="fp-meta"><span>09:30am</span><br>Teatro Español</span>
+                </div>
+                <div class="schedule-info">
+                  <h4 class="title">Bienvenida</h4>
+                  <div class="speaker">
+                    <figure class="avatar">
+                      <img src="assets/images/schedule/avatar01.jpg" alt="">
+                    </figure>
+                    <div class="fp-desc">
+                      <h4 class="name">Alan Rodas Bonjour</h4>
+                      <p>Coordinador de la Tec.en Programación Informática (UNQ - Gral. Belgrano)</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="pull-right text-right">
+                  <span class="fp-meta"><span>10:00am</span><br>Por definir</span>
+                </div>
+                <div class="schedule-info">
+                  <h4 class="title">Por definir</h4>
+                  <div class="speaker">
+                    <figure class="avatar">
+                      <img src="assets/images/schedule/avatar02.jpg" alt="">
+                    </figure>
+                    <div class="fp-desc">
+                      <h4 class="name">Por definir</h4>
+                      <p>Por definir</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="pull-right text-right">
+                  <span class="fp-meta"><span>11:00am</span><br>Por definir</span>
+                </div>
+                <div class="schedule-info">
+                  <h4 class="title">Por definir</h4>
+                  <div class="speaker">
+                    <figure class="avatar">
+                      <img src="assets/images/schedule/avatar02.jpg" alt="">
+                    </figure>
+                    <div class="fp-desc">
+                      <h4 class="name">Por definir</h4>
+                      <p>Por definir</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="pull-right text-right">
+                  <span class="fp-meta"><span>12:00am</span><br>Por definir</span>
+                </div>
+                <div class="schedule-info">
+                  <h4 class="title">Por definir</h4>
+                  <div class="speaker">
+                    <figure class="avatar">
+                      <img src="assets/images/schedule/avatar02.jpg" alt="">
+                    </figure>
+                    <div class="fp-desc">
+                      <h4 class="name">Por definir</h4>
+                      <p>Por definir</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="pull-right text-right">
+                  <span class="fp-meta"><span>13:00pm</span><br></span>
+                </div>
+                <div class="schedule-info">
+                  <h4 class="title">Corte para almuerzo</h4>
+                </div>
+              </li>
+
+              <li>
+                <div class="pull-right text-right">
+                  <span class="fp-meta"><span>14:00am</span><br>Por definir</span>
+                </div>
+                <div class="schedule-info">
+                  <h4 class="title">Por definir</h4>
+                  <div class="speaker">
+                    <figure class="avatar">
+                      <img src="assets/images/schedule/avatar02.jpg" alt="">
+                    </figure>
+                    <div class="fp-desc">
+                      <h4 class="name">Por definir</h4>
+                      <p>Por definir</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="pull-right text-right">
+                  <span class="fp-meta"><span>15:00am</span><br>Por definir</span>
+                </div>
+                <div class="schedule-info">
+                  <h4 class="title">Por definir</h4>
+                  <div class="speaker">
+                    <figure class="avatar">
+                      <img src="assets/images/schedule/avatar02.jpg" alt="">
+                    </figure>
+                    <div class="fp-desc">
+                      <h4 class="name">Por definir</h4>
+                      <p>Por definir</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="pull-right text-right">
+                  <span class="fp-meta"><span>16:00am</span><br>Por definir</span>
+                </div>
+                <div class="schedule-info">
+                  <h4 class="title">Por definir</h4>
+                  <div class="speaker">
+                    <figure class="avatar">
+                      <img src="assets/images/schedule/avatar02.jpg" alt="">
+                    </figure>
+                    <div class="fp-desc">
+                      <h4 class="name">Por definir</h4>
+                      <p>Por definir</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="pull-right text-right">
+                  <span class="fp-meta"><span>17:00am</span><br>Por definir</span>
+                </div>
+                <div class="schedule-info">
+                  <h4 class="title">Por definir</h4>
+                  <div class="speaker">
+                    <figure class="avatar">
+                      <img src="assets/images/schedule/avatar02.jpg" alt="">
+                    </figure>
+                    <div class="fp-desc">
+                      <h4 class="name">Por definir</h4>
+                      <p>Por definir</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+
+          </div> <!--|End schedules|-->
+        </div>
+      </div>
+    </div>
+  </div>
+</section> <!--||End Schedule||-->
+
+<!--||Organizers||-->
+<section id="organizers" class="organizers-section section overlay-white">
+  <div class="overlay-inner">
+    <div class="container ">
+      <!--|Section Header|-->
+      <header class="section-header">
+        <div class="row">
+          <div class="col-md-6 content-center">
+            <h2 class="section-title">
+              <span class="fp-meta">Los</span>
+              <span class="title-text">Organizadores</span>
+            </h2>
+            <p>
+              Este evento está organizado desde la coordinación de la carrera de Tecnicatura en
+              Programación Informática que se dicta a través de la Universidad Nacional de Quilmes en
+              el Centro InterUniversitario de la Municipalidad de General Belgrano.
+            </p>
+          </div>
+        </div>
+      </header> <!--|End Section Header|-->
+
+      <div class="organizers-panel content-center text-center">
+        <!--|Organizers|-->
+        <ul class="organizers content-center text-center">
+          <li><a href="#"><img src="assets/images/organizers/UNQ.svg" alt=""></a></li>
+          <li><a href="#"><img src="assets/images/organizers/CIU.svg" alt=""></a></li>
+          <li><a href="#"><img src="assets/images/organizers/GB.png" alt=""></a></li>
+        </ul> <!--|End Organizers|-->
+      </div>
+    </div>
+  </div>
+</section> <!--||End Organizers||-->
+
+<!--||Sponsor||-->
+<section id="sponsor" class="sponsor-section section overlay-white" style="padding-bottom: 30px;">
+  <div class="container">
+    <!--|Section Header|-->
+    <header class="section-header">
+      <div class="row">
+        <div class="col-md-6 content-center">
+          <h2 class="section-title">
+            <span class="fp-meta">Nuestros</span>
+            <span class="title-text">Sponsors</span>
+          </h2>
+          <p>Las siguientes empresas y organismos nos acompañan en este evento.</p>
+        </div>
+      </div>
+    </header> <!--|End Section Header|-->
+
+    <div class="row">
+      <div class="col-md-3 col-sm-6 content-center">
+        <h3 class="text-center">Próximamente</h3>
+      </div>
+    </div>
+
+    <div class="button-panel text-center">
+      <a class="btn btn-primary" href="https://forms.gle/kYnHaFHebaRPqFiT7">Quiero ser un sponsor</a>
+    </div>
+
+  </div>
+</section> <!--||End Sponsor||-->
+
+<!--||Map||-->
+<div id="map" class="map-container"></div>
+<!--||End Map||-->
+
+<!--||Subscribe||-->
+<div class="subscribe section overlay-black">
+  <div class="overlay-inner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 content-center">
+          <!--|Section Header|-->
+          <header class="section-header">
+            <h2 class="section-title">
+              <span class="fp-meta">No pierdas la opotunidad</span>
+              <span class="title-text">Registrate Gratis</span>
+            </h2>
+            <p>Solo pedimos registro para poder organizar adecuadamente el evento. Si pensas asistir por favor registrate.</p>
+
+            <a class="btn btn-primary" href="https://forms.gle/cuaaGXeyrbt8dUjs5">Registrarme</a>
+          </header> <!--|End Section Header|-->
+
+        </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div> <!--||End Subscribe||-->
+
+<!--||FAQ||-->
+<section id="faqs" class="section overlay-white">
+  <div class="overlay-inner">
+    <div class="container">
+      <!--|Section Header|-->
+      <header class="section-header">
+        <div class="row">
+          <div class="col-md-6 content-center">
+            <h2 class="section-title">
+              <span class="fp-meta">Las</span>
+              <span class="title-text">Preguntas</span>
+            </h2>
+            <p>Contestamos las preguntas más comunes de nuestros visitantes.</p>
+          </div>
+        </div>
+      </header> <!--|End Section Header|-->
+
+      <div class="row">
+        <div class="col-md-9 content-center">
+          <!--|FAQS|-->
+          <div class="faq-wrapper" id="faq-panel">
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#faq-panel" href="#faq1">
+                    <i class="fa-icon ion-ios-location"></i> ¿El encuentro es presencial?
+                  </a>
+                </h4>
+              </div>
+              <div id="faq1" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <p><b>Si</b>, se llevará adelante en el Teatro y Cine Español y en la Casa de la Cultura, que quedan en la intersección de la Av. Larrea y Rodriguez Peña, justo frente a la nueva sede del CIU.</p>
+                  <p>Tené en cuenta que deberás cumplir con los protocolos sanitarios vigentes al momento del evento. Esto incluye el uso de tapabocas, alcohol en gel y distanciamiento.</p>
+                  <p>Sabemos que tenés ganas de venir, pero si presentás síntomas de alguna enfermedad, te pedimos que por favor te quedes en casa.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#faq-panel" href="#faq2">
+                    <i class="fa-icon ion-cash"></i> ¿Hay que pagar algo para asistir?
+                  </a>
+                </h4>
+              </div>
+              <div id="faq2" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <p><b>No</b>, la asistencia es libre y gratuita. Solo pedimos que te registres antes de asistir.</p>
+                  <p>Por temas de aforo ante la situación sanitaria necesitamos saber cuantas personas van a estar asistiendo con antelación para poder organizarnos adecuadamente.</p>
+                  <p>Podes registrarte en el botón "Registrarme" o siguiendo <a href="https://forms.gle/cuaaGXeyrbt8dUjs5">este enlace</a>.</a></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#faq-panel" href="#faq3">
+                    <i class="fa-icon ion-ios-people"></i> ¿Es solo para programadores?
+                  </a>
+                </h4>
+              </div>
+              <div id="faq3" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <p><b>No</b>, es para todos y todas. Habrá charlas para programadores o estudiantes
+                    avanzados, pero también para personas sin conocimientos en programación. Si estás
+                    considerando el desarrollo de software como carrera a futuro no dejes de asistir.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#faq-panel" href="#faq4">
+                    <i class="fa-icon ion-android-bus"></i> ¿Cómo llego a Belgrano?
+                  </a>
+                </h4>
+              </div>
+              <div id="faq4" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <p>General Belgrano se encuentra en la intersección de las Rutas Provinciales 41 y 29.
+                    Dependiendo de tu ubicación podes llegar de diversas formas. Desde la Terminal de Micros de
+                    la Ciudad de La Plata parten micros a General Belgrano. Consultar la frecuencia con antelación
+                    y averiguar por posibles reservas por pandemia.
+                  </p>
+                  <p>
+                    Adicionalmente estamos analizando la posibilidad de contar con transporte ida y vuelta desde
+                    la Universidad Nacional de Quilmes.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#faq-panel" href="#faq5">
+                    <i class="fa-icon ion-android-sunny"></i> ¿Me puedo quedar en Belgrano?
+                  </a>
+                </h4>
+              </div>
+              <div id="faq5" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <p>General Belgrano tiene una amplia oferta turística que incluye varios hoteles y cabañas.
+                    Podes conseguir alojamiento vía diversos servicios de arrendamiento de hoteles o de alquiler de
+                    casas particulares.
+                  </p>
+                  <p>
+                    Además Belgrano cuenta con las Termas del Rio Salado, balneario, rio con posibilidad de pesca,
+                    bosque y una gran cantidad de espacios verdes. Es una buena opción de escapada de fin de semana luego del evento.
+                  </p>
+                  <p>
+                    Para más información podes visitar la página de turismo del municipio en <a href="https://generalbelgrano.tur.ar">https://generalbelgrano.tur.ar</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#faq-panel" href="#faq6">
+                    <i class="fa-icon ion-ios-monitor"></i>  ¿Qué debo llevar al evento?
+                  </a>
+                </h4>
+              </div>
+              <div id="faq6" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <p><b>Tapabocas</b>. No pedimos más nada. Si vas a participar de un taller y tenés <b>notebook o netbook</b>y queres traerla, es bienvenida. Probablemente te permita trabajar más cómodo.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#faq-panel" href="#faq7">
+                    <i class="fa-icon ion-pizza"></i>  ¿El almuerzo está incluido?
+                  </a>
+                </h4>
+              </div>
+              <div id="faq7" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <p><b>No</b>, el amuerzo corre por cuenta de los asistentes.</p>
+                  <p>Si contaremos con café y tentempies durante el evento.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#faq-panel" href="#faq8">
+                    <i class="fa-icon ion-chatbox-working"></i> ¿Qué hago si quiero dar una charla o taller?
+                  </a>
+                </h4>
+              </div>
+              <div id="faq8" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <p>Propuestas de charlas o talleres son bienvenidas. Anotate en el botón "Quiero ser un Sponsor" o siguiendo <a href="https://forms.gle/kYnHaFHebaRPqFiT7">este link</a></p>
+                  <h6>Charlas:</h6>
+                  <p>Proponemos las charlas con una duración de 40 minutos con 10 minutos para preguntas al finalizar. Rogamos por favor respetar los tiempos.</p>
+                  <p>Las charlas pueden tener temáticas libres, siempre y cuando estén relacionadas a la industria del software.</p>
+                  <p>El público objetivo pueden ser estudiantes avanzados de la Tecnicatura en Programación Informática y graduados de la carrera o bien aspitantes a la carrera (estudiantes de último año de colegios secundarios)</p>
+                  <h6>Talleres:</h6>
+                  <p>Proponemos talleres de 1 hora con posibilidad de hasta 2 horas.</p>
+                  <p>Se contará con equipos, aunque debe tenerse consideración que tal vez no haya un equipo por persona. Habrá espacio amplio para actividades unplugged y mesas comunitarias para proyectos grupales.</p>
+                  <p>El público objetivo pueden ser estudiantes avanzados de la Tecnicatura en Programación Informática y graduados de la carrera o bien aspitantes a la carrera (estudiantes de último año de colegios secundarios), dando preferencia en la sección de talleres a estos últimos.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#faq-panel" href="#faq9">
+                    <i class="fa-icon ion-social-usd"></i> Soy de una empresa y quiero ser sponsor ¿Cuánto debo pagar?
+                  </a>
+                </h4>
+              </div>
+              <div id="faq9" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <p>No exigimos pago de ningún tipo de canon a los sponsors, pero aceptamos contribuciones voluntarias.</p>
+                  <p>Si exigimos la participación brindando una charla o taller.</p>
+                  <p>Adicionalmente deben permitir el uso del logo en el sitio y folletería del evento.</p>
+                  <p>Si querés realizar una contribución voluntaria completá el formulario en el botón "Quiero ser un Sponsor" o siguiendo <a href="https://forms.gle/kYnHaFHebaRPqFiT7">este link</a> y decinos con cuanto querés/podés colaborar. Los datos para transferencia estarán disponibles en el formulario.</p>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#faq-panel" href="#faq10">
+                    <i class="fa-icon ion-android-home"></i>¿Puedo poner un stand de mi empresa?
+                  </a>
+                </h4>
+              </div>
+              <div id="faq10" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <p><b>Si</b>. Vamos a contar con lugar para que pongas algún banner e incluso stands con personal para recibir gente.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#faq-panel" href="#faq11">
+                    <i class="fa-icon ion-android-favorite"></i>¿Puedo regalar merchandising de mi empresa?
+                  </a>
+                </h4>
+              </div>
+              <div id="faq11" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <p><b>Si</b>. Podes regalar productos en tu stand o en el proceso de recepción de los asistentes.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#faq-panel" href="#faq12">
+                    <i class="fa-icon ion-android-hand"></i>¿Puedo sortear cosas?
+                  </a>
+                </h4>
+              </div>
+              <div id="faq12" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <p><b>Si</b>. Estamos considerando la posibilidad de asociar un
+                    número único a cada asistente registrado. Podrás realizar un
+                    sorteo usando ese número.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#faq-panel" href="#faq13">
+                    <i class="fa-icon ion-android-cart"></i>¿Puedo vender cosas?
+                  </a>
+                </h4>
+              </div>
+              <div id="faq13" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <p><b>No</b>. No está permitido que los sponsors y empresas invitadas vendan productos.
+                    Si deseas vender un producto o servicio en el evento contactate con el organizador para pedir
+                    autorización.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#faq-panel" href="#faq50">
+                    <i class="fa-icon ion-email"></i> Tengo más dudas ¿Dónde escribo?
+                  </a>
+                </h4>
+              </div>
+              <div id="faq50" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <p>Podes contactarte con el organizador del evento, Alan Rodas Bonjour, en <a href="mailto://alanrodas@gmail.com">alanrodas@gmail.com</a></p>
+                </div>
+              </div>
+            </div>
+          </div> <!--|End FAQS|-->
+        </div>
+      </div>
+    </div>
+  </div>
+</section> <!--||End FAQ||-->
+
+<!--||Footer||-->
+<footer id="footer" class="footer">
+  <div class="container">
+    <!--|Copyright|-->
+    <p class="copyright">&copy; 2021 <a href="#">Alan Rodas Bonjour</a>. Todos los derechos reservados.</p> <!--|End Copyright|-->
+  </div>
+</footer> <!--||Footer||-->
+
+<!--||Javascript||-->
+<!--|jQuery|-->
+<script src="assets/js/jquery.min.js"></script>
+<!--|Countdown|-->
+<script src="assets/js/jquery.countdown.min.js"></script>
+<!--Owl Carousel-->
+<script src="assets/js/owl.carousel.min.js"></script>
+<!--|Google Map|-->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<!--|Fitvids|-->
+<script src="assets/js/jquery.fitvids.js"></script>
+<!--|Validate|-->
+<script src="assets/js/jquery.validate.min.js"></script>
+<!--|Ajaxchimp|-->
+<script src="assets/js/jquery.ajaxchimp.min.js"></script>
+<!--|Bootstrap|-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!--|Leaflet Map-->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/1.12.7/jarallax.min.js"
+    integrity="sha512-JpiSiPEgPmeTAnXyH375a9UxAsjoiyO+lpsayQd7Pcl2+tYf4y1beIF25yDMvmAV7dbZUPqh084iT3D6IQOoHg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+<!--|Init|-->
+<script src="assets/js/init.js"></script>
+</body>
+</html>
